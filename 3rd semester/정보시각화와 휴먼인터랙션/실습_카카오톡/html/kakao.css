@@ -1,0 +1,84 @@
+body {
+	height: 100%;
+	width: 100%;
+	background-color: rgb(155, 186, 216);
+	font-family: 'Apple SD Gothic Neo', 'Malgun Gothic';
+	font-size: 9pt;
+}
+
+#chat_panel {
+	position: absolute;
+	top: 0px; bottom: 40px;
+	left: 0px; right: 0px;
+	overflow: auto;
+}
+
+#input_panel {
+  position: fixed;
+  bottom: 0px;
+	left: 0px; right: 0px;
+	height: 40px;
+	overflow: hidden;
+  background-color: rgb(238, 238, 238);
+}
+
+#input_panel > div {
+	margin: 6px;
+}
+
+#input_control {
+	height: 25px;
+	width: 100%;
+	padding-left: 10px;
+	border-width: 0px;
+	box-sizing: border-box;
+}
+
+.user_block {
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.user_thumbnail {
+	margin: 0 10px 0 0;
+	height: 40px;
+	width: 40px;
+	border-radius: 20px;
+	float: left;
+	background: url('bono.jpg');
+	background-size: 100%;
+}
+
+.chat_block_left {
+	display: inline-block;
+	max-width: 70%;
+}
+
+.chat_block_right {
+	text-align: right;
+}
+
+.user_id {
+  margin-bottom: 5px;
+}
+
+.chat_left {
+	display: inline-block;
+	padding: 7px 8px;
+	border-radius: 4px;
+	margin-bottom: 7px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 1px 2px 0px #8FABC7;
+}
+
+.chat_right {
+	text-align: left;
+	max-width: 70%;
+	display: inline-block;
+	padding: 7px 8px;
+	border-radius: 4px;
+	margin-bottom: 7px;
+	background-color: #FFEC42;
+	box-shadow: 0px 1px 2px 0px #8FABC7;
+}

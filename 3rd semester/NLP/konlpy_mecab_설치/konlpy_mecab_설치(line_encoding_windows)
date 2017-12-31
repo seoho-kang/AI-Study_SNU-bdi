@@ -1,0 +1,73 @@
+konlpy mecab 설치법
+mecab은 공식문서대로 했을 시 설치가 제대로 안되는 경우가 많아 설치방법을 공유합니다.
+(mecab은 리눅스 환경에서만 작동하는 것으로 알고 있습니다. 윈도우는 안 됐고, 맥은 모르겠습니다.)
+konlpy 공식문서 : http://konlpy.org/ko/latest/install/#ubuntu
+
+
+1. python 설치
+: 저는 아나콘다(miniconda) 가상환경 python 3.6에서 진행하였습니다.
+  os : ubuntu lts 16.04, python : python 3.6.3 (miniconda)
+
+
+2. 자바 설치
+: 우리가 설치한 ubuntu lts 16.04 버전에는 이미 java가 깔려있습니다.
+  -java가 깔려 있고 환경변수에 등록되어 있는지 확인
+   : terminal 창을 키시고 java나 javac를 입력하신 후 화면을 확인했을 때
+     "No command 'java' found, did you mean" 같은 말이 안 뜨면 설치된 것입니다.
+    
+  -java 버전 확인
+   : terminal 창을 키시고 java -version 입력
+    저는 openjdk version "1.8.0_151" 이네요
+
+
+3. konlpy 설치
+: terminal에서 pip install konlpy 입력(가상환경 사용자라면 가상환경 내에서 입력)
+  아나콘다 없이 그냥 파이썬만 사용하는 환경에서는 pip3 install konlpy로 설치했던 것 같습니다.
+  
+  설치 후 파이썬을 키시고(terminal에서 python 입력), 
+  import konlpy를 입력했을 때 아무 메세지도 안 뜨면 설치가 성공한 것입니다.
+  저는 여기서 JPype가 없다는 에러가 떴습니다.
+
+
+4. JPype 설치
+: terminal에서 pip install JPype1-py3를 입력(가상환경 사용자라면 가상환경 내에서 입력)
+  아나콘다 없이 그냥 파이썬만 사용하는 환경에서는 pip3 install JPype1-py3로 설치했던 것 같습니다.
+
+  설치가 완료되면 다시 파이썬을 키시고 import konlpy를 입력해봅니다.
+  이번에는 아무 메세지도 안 뜨네요
+
+
+4. mecab 설치
+: mecab은 curl을 통해 다운로드 받기 때문에(이 경로가 가장 쉽습니다)
+  curl을 설치해야 하지만 우리가 설치한 ubuntu lts 16.04 버전은 이미 최신 버전의 curl이 설치되어 있었습니다.
+
+  바로 mecab 설치 명령어를 terminal에 입력해줍니다.
+  bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)
+
+  이전에 다른 것들을 설치했던 것과 달리 조금 오랜 시간이 걸립니다.
+  설치가 완료되면 설치가 완료되었나 확인해봅시다.
+
+
+5. mecab 설치확인  
+: terminal에서 python을 입력하여 파이썬을 킵니다.
+  아래 코드를 한 줄 한 줄 입력합니다. 복붙도 좋습니다.
+  (한글이 있어서 유니코드 에러가 나는 경우는 python 2.7을 사용하고 계신 것이기 때문에
+  python 3.x 버전으로 바꿔서 설치하시기 바랍니다. 
+  이 경우 맨 윗 줄에 #-*- coding: utf-8 -*- 를 추가하면 임시로 볼 수 있습니다. 주석 해제 x)
+  
+import konlpy 		     # konlpy 설치 확인
+from konlpy.tag import Mecab # Mecab 설치 확인
+mecab = Mecab()              # 여기서 tagger 에러 메시지가 나온다면 개인 톡을 주세요
+test_seq = "여보세요 거기 누구없소, 거기 놓인 물 좀 내게 주오"
+["{}/{}".format(word, tag) for word, tag in mecab.pos(test_seq)]
+
+결과 :
+['여보세요/IC', '거기/NP', '누구/NP', '없/VA', '소/EF', ',/SC', '거기/NP', '놓인/VV+ETM', '물/NNG', '좀/MAG', '내/VV', '게/EC', '주/VX', '오/EC']
+
+
+-끝-
+  
+  
+
+
+  

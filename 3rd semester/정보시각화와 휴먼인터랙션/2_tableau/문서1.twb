@@ -1,0 +1,616 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10400.17.0915.2112                               -->
+<workbook original-version='10.4' source-build='10.4.0 (10400.17.0915.2112)' source-platform='win' version='10.4' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='교통량 (tollgate)' inline='true' name='federated.05bx95h0e4kslv0zlpprz0oao2va' version='10.4'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='tollgate' name='excel-direct.1qkes0e0qizk021faitiz1s8jv6g'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='D:/3학기/정보시각화와 휴먼인터랙션/2_tableau/tollgate.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.1qkes0e0qizk021faitiz1s8jv6g' name='교통량' table='[교통량$]' type='table'>
+          <columns gridOrigin='A1:S10001:no:A1:S10001:0' header='yes' outcome='6'>
+            <column datatype='string' name='집계일자' ordinal='0' />
+            <column datatype='integer' name='영업소코드' ordinal='1' />
+            <column datatype='string' name='영업소명' ordinal='2' />
+            <column datatype='integer' name='입출구구분코드' ordinal='3' />
+            <column datatype='string' name='입출구명' ordinal='4' />
+            <column datatype='integer' name='TCS하이패스구분코드' ordinal='5' />
+            <column datatype='string' name='TCS하이패스명' ordinal='6' />
+            <column datatype='integer' name='고속도로운영기관구분코드' ordinal='7' />
+            <column datatype='string' name='고속도로운영기관명' ordinal='8' />
+            <column datatype='integer' name='영업형태구분코드' ordinal='9' />
+            <column datatype='string' name='영업형태명' ordinal='10' />
+            <column datatype='integer' name='1종교통량' ordinal='11' />
+            <column datatype='integer' name='2종교통량' ordinal='12' />
+            <column datatype='integer' name='3종교통량' ordinal='13' />
+            <column datatype='integer' name='4종교통량' ordinal='14' />
+            <column datatype='integer' name='5종교통량' ordinal='15' />
+            <column datatype='integer' name='6종교통량' ordinal='16' />
+            <column datatype='integer' name='총교통량' ordinal='17' />
+            <column datatype='integer' name='before' ordinal='18' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>집계일자</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[집계일자]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>집계일자</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>영업소코드</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[영업소코드]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>영업소코드</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>영업소명</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[영업소명]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>영업소명</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>입출구구분코드</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[입출구구분코드]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>입출구구분코드</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>입출구명</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[입출구명]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>입출구명</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TCS하이패스구분코드</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TCS하이패스구분코드]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>TCS하이패스구분코드</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TCS하이패스명</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[TCS하이패스명]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>TCS하이패스명</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>고속도로운영기관구분코드</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[고속도로운영기관구분코드]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>고속도로운영기관구분코드</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>고속도로운영기관명</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[고속도로운영기관명]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>고속도로운영기관명</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>영업형태구분코드</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[영업형태구분코드]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>영업형태구분코드</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>영업형태명</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[영업형태명]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>영업형태명</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LKO_RKR_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>1종교통량</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[1종교통량]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>1종교통량</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2종교통량</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[2종교통량]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>2종교통량</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>3종교통량</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[3종교통량]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>3종교통량</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>4종교통량</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[4종교통량]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>4종교통량</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>5종교통량</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[5종교통량]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>5종교통량</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>6종교통량</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[6종교통량]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>6종교통량</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>총교통량</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[총교통량]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>총교통량</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>before</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[before]</local-name>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias>before</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[교통량]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:S10001:no:A1:S10001:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.394207' measure-ordering='alphabetic' measure-percentage='0.605793' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;대한민국&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='시트 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='교통량 (tollgate)' name='federated.05bx95h0e4kslv0zlpprz0oao2va' />
+          </datasources>
+          <datasource-dependencies datasource='federated.05bx95h0e4kslv0zlpprz0oao2va'>
+            <column datatype='integer' name='[1종교통량]' role='measure' type='quantitative' />
+            <column-instance column='[영업소명]' derivation='None' name='[none:영업소명:nk]' pivot='key' type='nominal' />
+            <column-instance column='[1종교통량]' derivation='Sum' name='[sum:1종교통량:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[총교통량]' derivation='Sum' name='[sum:총교통량:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[영업소명]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[총교통량]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.05bx95h0e4kslv0zlpprz0oao2va].[none:영업소명:nk] * [federated.05bx95h0e4kslv0zlpprz0oao2va].[sum:총교통량:qk])</rows>
+        <cols>[federated.05bx95h0e4kslv0zlpprz0oao2va].[sum:1종교통량:qk]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='시트 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.05bx95h0e4kslv0zlpprz0oao2va].[none:영업소명:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='시트 1' width='192'>
+      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
+      N/cR8uavmf5/L7D/BLiIoC4AAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
